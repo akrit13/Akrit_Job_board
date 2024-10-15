@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#" id="homeLink">Home</a></li>
+      <li><a href="#" id="jobsLink">Jobs</a></li>
+      <li><a href="#" id="employerLink">Employer Dashboard</a></li>
+      <li><a href="#" id="candidateLink">Candidate Dashboard</a></li>
+      <li><a href="#" id="loginLink">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Page -->
+  <section id="home" class="page">
+    <header>
+      <h1>Welcome to Job Finder</h1>
+      <p>Find your dream job or hire the best talent here.</p>
+    </header>
+    <section id="featured-jobs">
+      <h2>Featured Job Listings</h2>
+      <div class="job-listings">
+        <div class="job-item">
+          <h3>Frontend Developer</h3>
+          <p>Location: New York</p>
+          <p>Company: TechCorp</p>
+          <button onclick="showJobDetail()">View Details</button>
+        </div>
+        <div class="job-item">
+          <h3>Backend Developer</h3>
+          <p>Location: San Francisco</p>
+          <p>Company: Innovatech</p>
+          <button onclick="showJobDetail()">View Details</button>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Job Listings Page -->
+  <section id="jobs" class="page">
+    <header>
+      <h1>Available Jobs</h1>
+      <form id="search-form">
+        <input type="text" id="search-bar" placeholder="Search jobs...">
+        <button type="submit">Search</button>
+      </form>
+    </header>
+    <section id="job-listings">
+      <div class="job-item">
+        <h3>Software Engineer</h3>
+        <p>Location: Remote</p>
+        <p>Company: DevWorks</p>
+        <button onclick="showJobDetail()">View Details</button>
+      </div>
+      <div class="job-item">
+        <h3>UX Designer</h3>
+        <p>Location: Chicago</p>
+        <p>Company: DesignCo</p>
+        <button onclick="showJobDetail()">View Details</button>
+      </div>
+    </section>
+  </section>
+
+  <!-- Job Detail Page -->
+  <section id="job-detail" class="page">
+    <header>
+      <h1>Job Details</h1>
+    </header>
+    <section id="job-details">
+      <h2>Frontend Developer</h2>
+      <p>Company: TechCorp</p>
+      <p>Location: New York</p>
+      <p>Salary: $80,000/year</p>
+      <p>Job Description: Responsible for developing user interfaces for web applications.</p>
+      <button onclick="showJobApplication()">Apply Now</button>
+    </section>
+  </section>
+
+  <!-- Employer Dashboard -->
+  <section id="employer-dashboard" class="page">
+    <header>
+      <h1>Employer Dashboard</h1>
+    </header>
+    <section>
+      <h2>Manage Account</h2>
+      <form>
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="company-name" value="TechCorp">
+        <button type="submit">Update Info</button>
+      </form>
+
+      <h2>Post a Job</h2>
+      <form id="post-job-form">
+        <label for="job-title">Job Title:</label>
+        <input type="text" id="job-title" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" required>
+
+        <label for="description">Job Description:</label>
+        <textarea id="description" required></textarea>
+
+        <button type="submit">Post Job</button>
+      </form>
+    </section>
+  </section>
+
+  <!-- Candidate Dashboard -->
+  <section id="candidate-dashboard" class="page">
+    <header>
+      <h1>Candidate Dashboard</h1>
+    </header>
+    <section>
+      <h2>Manage Profile</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="John Doe">
+        <button type="submit">Update Profile</button>
+      </form>
+
+      <h2>Your Applications</h2>
+      <div class="application-list">
+        <p>Frontend Developer at TechCorp - Status: Under Review</p>
+        <p>Backend Developer at Innovatech - Status: Interview</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- Job Application Process -->
+  <section id="job-application" class="page">
+    <header>
+      <h1>Job Application</h1>
+    </header>
+    <form id="application-form" enctype="multipart/form-data">
+      <label for="applicant-name">Full Name:</label>
+      <input type="text" id="applicant-name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume" required>
+
+      <button type="submit">Apply</button>
+    </form>
+  </section>
+
+  <!-- Login/Authentication Page -->
+  <section id="login" class="page">
+    <header>
+      <h1>Login</h1>
+    </header>
+    <form id="login-form">
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" required>
+
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Job Finder</p>
+  </footer>
+
+<!-- CSS for styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .job-listings {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .job-item {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 30%;
+      text-align: center;
+    }
+
+    form {
+      margin-top: 1rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .job-listings {
+        flex-direction: column;
+      }
+
+      .job-item {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+
+ <!-- JavaScript for functionality -->
+  <script>
+    // Switch between pages
+    const pages = document.querySelectorAll('.page');
+    const links = document.querySelectorAll('nav ul li a');
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        pages.forEach(page => page.style.display = 'none');
+        const targetPage = link.id.replace('Link', '');
+        document.getElementById(targetPage).style.display = 'block';
+      });
+    });
+
+    // Initial display home page
+    document.getElementById('home').style.display = 'block';
+
+    // Show job details
+    function showJobDetail() {
+      pages.forEach(page => page.style.display = 'none');
+      document.getElementById('job-detail').style.display = 'block';
+    }
+
+    // Show job application page
+    function showJobApplication() {
+      pages.forEach(page => page.style.display = 'none');
+      document.getElementById('job-application').style.display = 'block';
+    }
+
+    // Search functionality
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const jobs = document.querySelectorAll('.job-item');
+
+      jobs.forEach(job => {
+        const title = job.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+          job.style.display = 'block';
+        } else {
+          job.style.display = 'none';
+        }
+      });
+    });
+
+    // Login authentication (pseudo)
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      // Here you would handle real authentication, below is a mock example
+      if (email === 'admin@jobportal.com' && password === 'password') {
+        alert('Login Successful');
+        pages.forEach(page => page.style.display = 'none');
+        document.getElementById('home').style.display = 'block';
+      } else {
+        alert('Invalid credentials');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+  
+ 
